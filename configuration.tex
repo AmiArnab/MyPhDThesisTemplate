@@ -1,0 +1,82 @@
+\renewcommand\UrlFont{\color{blue}\rmfamily}
+
+% Change line spacing
+\renewcommand{\baselinestretch}{1.2} 
+
+% Page header with chapter name
+% \pagestyle{fancy} %Apply after abstract
+% \lhead{}
+\lhead{\fancyplain{}{\chaptername~ \thechapter}}
+\chead{}
+\rhead{\fancyplain{}{\leftmark}}
+% \rhead{\fancyplain{}{\chaptername~ \thechapter~|~\leftmark}}
+\renewcommand{\headrulewidth}{0pt} %hide the line
+
+%--------------------------------------------------------
+%Modifying abstract environment
+\renewenvironment{abstract}
+ {\small
+  \begin{center}
+  \bfseries \abstractname\vspace{-.5em}\vspace{0pt}
+  \end{center}
+  \list{}{
+    \setlength{\leftmargin}{0.2cm}%
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \item\relax}
+ {\endlist}
+
+%--------------------------------------------------------
+% Circled itemes in itemize
+\pgfkeys{/csteps/fill color=black}
+\pgfkeys{/csteps/inner color=white}
+
+%--------------------------------------------------------
+\pgfplotsset{compat=1.6} % avoid warnings
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{fit,calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{fit,calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{positioning}
+\captionsetup{compatibility=false}
+
+
+%-------------------------------------------------------
+% Coloured box
+\newtcolorbox{greybox}[1][]{%
+enhanced jigsaw,
+sharp corners,
+boxrule=0pt, 
+colback=black!10,   
+borderline={0pt}{-2pt}{white,solid} % 0.5pt linewith, -2pt outside, black solid linestyle
+}
+
+%--------------------------------------------------------
+
+\newcommand{\blankpage}{
+\mbox{}
+\vspace{\fill}
+\begin{center}
+    This page is intentionally left blank.
+\end{center}
+\thispagestyle{empty}
+\newpage
+}
+
+\newcommand{\blankpagewithnumber}{
+\mbox{}
+\vspace{\fill}
+\begin{center}
+    This page is intentionally left blank.
+\end{center}
+\thispagestyle{plain}
+\newpage
+}
+
+%----------------------------------------------------------
+% Renaming require and ensure to input and output in algorithms
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}

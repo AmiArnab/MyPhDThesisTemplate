@@ -1,0 +1,485 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define custom colours
+\definecolor{myblue}{rgb}{0.122, 0.435, 0.698}
+\definecolor{myred}{rgb}{0.84, 0.17, 0.10}
+\definecolor{mygray}{rgb}{0.42, 0.42, 0.42}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\x{{\mathbf x}}
+\def\L{{\cal L}}
+
+\def\thesistitle{Whatever the Nobel-winning Work that\\ You have done}
+\def\myname{Albert Einstein}
+\def\supervisorname{Alfred Kleiner}
+
+%\algnewcommand\algorithmicinput{\textbf{Input:}}
+%\algnewcommand\INPUT{\item[\algorithmicinput]}
+%\algnewcommand\algorithmicoutput{\textbf{Output:}}
+%\algnewcommand\OUTPUT{\item[\algorithmicoutput]}
+%\algnewcommand{\LineComment}[1]{\State \(\triangleright\) #1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pairing hardware primitives
+\def\Prism{\textcolor{myblue}{\textsf{Prism}}}
+%Resource Usage
+\def\impslice{2,506}
+\def\implut{5,229}
+\def\impreg{6,753}
+\def\impbram{20}
+\def\impdsp{40}
+\def\imppwr{0.701}
+\def\imptime{5.540}
+\def\impfreq{180.505}
+\def\impatetime{14.140}
+\def\impatp{35.434}
+\def\impexpcyc{882320}
+\def\imptatetime{30.956}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+\newtheorem{theorem}{Theorem}[section]
+\numberwithin{theorem}{section}
+\newtheorem{definition}{Definition}[section]
+\numberwithin{definition}{section}
+\newtheorem{observation}{Observation}
+\numberwithin{observation}{section}
+\newtheorem{claim}{Claim}[section]
+\numberwithin{claim}{section}
+\newtheorem{lemma}{Lemma}[section]
+\numberwithin{lemma}{section}
+\newtheorem{corollary}{Corollary}[theorem]
+\numberwithin{corollary}{section}
+
+%------------------------------------------------------------------------------
+
+\newcommand{\pointadd}{\textsf{PointAdd}{}}
+\newcommand{\pointdouble}{\textsf{PointDouble}{}}
+\newcommand{\scalarmul}{\textsf{ScalarMul}{}}
+
+%------------------------------------------------------------------------------
+
+%%%%%% author-defined macros %%%%%%%
+\newcommand\defeq{\stackrel{\rm \scriptstyle def}{=}}
+\renewcommand{\labelitemi}{$\bullet$}
+\newcommand{\textoverline}[1]{$\overline{\mbox{#1}}$}
+\newcommand{\upd}{\textnormal{\textsc{{Upd}}}}
+\newcommand{\update}{\textnormal{\textsc{{Update}}}}
+\newcommand{\search}{\textnormal{\textsc{{Search}}}}
+\newcommand{\setup}{\textnormal{\textsc{{Setup}}}}
+\newcommand{\encrypt}{\textnormal{\textsc{{Encrypt}}}}
+\newcommand{\gettag}{\textnormal{\textsc{{GetTag}}}}
+\newcommand{\retrieve}{\textnormal{\textsc{{Retrieve}}}}
+
+\newcommand{\OurScheme}{\textnormal{Nomos}}
+\newcommand{\ourscheme}{\textnormal{\textsc{Nomos}}}
+\newcommand{\basic}{\textnormal{\textsc{Basic}}}
+\newcommand{\csse}{\textnormal{\textsc{CSSE}}}
+\newcommand{\bsse}{\textnormal{\textsc{BSSE}}}
+\newcommand{\twinsse}{\textsc{TWINSSE}}
+\newcommand{\TWINSSE}{\textsc{TWINSSE}}
+\newcommand{\iex}{\textnormal{\textsc{IEX}}}
+\newcommand{\iexzmf}{\textnormal{\textsc{IEX-ZMF}}}
+\newcommand{\iextwolev}{\textnormal{\textsc{IEX-2LEV}}}
+\newcommand{\mitra}{\textnormal{\textsc{Mitra}}}
+\newcommand{\conj}{\textnormal{\textsc{Conj}}}
+\newcommand{\bdxt}{\textnormal{\textsc{BDXT}}}
+\newcommand{\oxt}{\textnormal{\textsc{OXT}}}
+\newcommand{\OXT}{\textnormal{\textsc{OXT}}}
+\newcommand{\hxt}{\textnormal{\textsc{HXT}}}
+\newcommand{\HXT}{\textnormal{\textsc{HXT}}}
+
+\newcommand{\vhmm}{\textnormal{\textsc{vhMM}}}
+\newcommand{\dpmm}{\textnormal{\textsc{dpMM}}}
+\newcommand{\ste}{\textnormal{\textsc{STE}}}
+
+\newcommand{\orion}{\textnormal{\textsc{Orion}}}
+\newcommand{\horus}{\textnormal{\textsc{Horus}}}
+\newcommand{\game}{\textnormal{\textsc{Game}}}
+
+%-----------------------------------------------------
+\newcommand{\CAM}{\textsf{CAM}{}}
+\newcommand{\AM}{\textsf{AMEM}{}}
+\newcommand{\AMEM}{\textsf{AMEM}{}}
+\newcommand{\CAMiSE}{\textsf{CAMiSE}}
+\newcommand{\CAMiSEpp}{\textsf{CAMiSE++}}
+\newcommand{\rowtag}{\textsf{tag}{}}
+\newcommand{\rowval}{\textsf{val}{}}
+\newcommand{\key}{\textsf{key}{}}
+\newcommand{\val}{\textsf{val}{}}
+%-----------------------------------------------------
+
+\def\EMM{\textsf{EMM}{}}
+\def\vhmm{\textsf{vhMM}{}}
+\def\dpmm{\textsf{dpMM}{}}
+\def\dprfmm{\textsf{dprfMM}{}}
+
+%-----------------------------------------------------
+
+\def\ske{\textsf{SKE}}
+\def\gen{\textsf{Gen}}
+\def\dec{\textsf{Dec}}
+\def\enc{\textsf{Enc}}
+\def\kgen{\textsf{KeyGen}}
+\def\tgen{\textsf{TokenGen}}
+\def\dec{\textsf{Dec}}
+%-----------------------------------------------------
+
+\def\add{\textsc{add}}
+\def\del{\textsc{del}}
+
+\def\keyword{\textsf{w}}
+\def\key{\textsf{key}}
+\def\val{\textsf{val}}
+\def\index{\textsf{index}}
+
+\def\sk{\textsf{sk}}
+\def\st{\textsf{st}}
+\def\tk{\textsf{tk}}
+\def\id{\textsf{id}}
+\def\av{\textnormal{\textsf{av}}}
+
+
+\def\scheme{\mathcal{E}}
+\def\sse{\textsf{SSE}}
+\def\SSE{\textsf{SSE}}
+\def\basic{\textsc{Basic}}
+
+%-----------------------------------------------------
+
+\def\qlist{\textsf{QList}}
+\def\tlist{\textsf{TList}}
+
+%-----------------------------------------------------
+
+\def\timedb{\textsf{TimeDB}}
+\def\updates{\textsf{Updates}}
+\def\delhist{\textsf{DelHist}}
+\def\upd{\textsc{Upd}}
+
+\def\update{\textsc{Update}}
+\def\search{\textsc{Search}}
+\def\setup{\textsc{Setup}}
+\def\gentoken{\textsc{GenToken}}
+\def\sseinsert{\textsc{Insert}}
+\def\query{\textsc{Query}}
+
+%-----------------------------------------------------
+
+\def\tset{\textsf{TSet}}
+\def\xset{\textsf{XSet}}
+\def\bf{\textsf{BF}}
+\def\rbf{\textsf{RBF}}
+\def\BF{\textsf{BF}}
+\def\RBF{\textsf{RBF}}
+\def\XDB{\textsf{XDB}}
+\def\tsetl{\textsf{TSetL}}
+
+%-----------------------------------------------------
+
+\def\nomos{\textsc{Nomos}}
+\def\odxt{\textsc{ODXT}}
+\def\ODXT{\textsc{ODXT}}
+\def\mcodxt{\textsc{MC-ODXT}}
+\def\ospiroxt{\textsc{OSPIR-OXT}}
+\def\oxt{\textsc{OXT}}
+\def\OXT{\textsc{OXT}}
+\def\twinsse{\textsc{TWINSSE}}
+
+
+%-----------------------------------------------------
+
+\def\GK{Gate-keeper}
+\def\Gk{gate-keeper}
+\def\clientset{\textbf{C}}
+\def\sim{\textsc{SIM}}
+
+\def\client{\mathcal{C}}
+\def\server{\mathcal{S}}
+\def\dataowner{\mathcal{D}}
+\def\gatekeeper{\mathcal{G}}
+\def\adversary{\mathcal{A}}
+\def\leakage{\mathcal{L}}
+
+%-----------------------------------------------------
+
+\def\mk{\textsf{mk}{}}
+\def\v{\textsf{v}{}}
+\def\eid{\textsf{v}{}}
+
+%-----------------------------------------------------
+
+\def\Rq{\mathcal{R}_q}
+\def\resultset{\mathcal{R}_q}
+\def\kwset{\Delta}
+
+\def\stokenlist{\textsf{stokenList}}
+\def\xtokenset{\textsf{xtokenSet}}
+\def\xtokenlist{\textsf{xtokenList}}
+\def\updatecnt{\textsf{UpdateCnt}}
+\def\saddr{\textsf{saddr}}
+\def\addr{\textsf{addr}}
+\def\xaddr{\textsf{xaddr}}
+
+\def\xind{\textsf{xind}}
+\def\xtag{\textsf{xtag}}
+\def\stag{\textsf{stag}}
+\def\bstag{\textsf{bstag}}
+\def\stoken{\textsf{stoken}}
+\def\bstoken{\textsf{bstoken}}
+\def\strap{\textsf{strap}}
+\def\bstrap{\textsf{bstrap}}
+\def\xtrap{\textsf{xtrap}}
+\def\bxtrap{\textsf{bxtrap}}
+
+\def\xtoken{\textsf{xtoken}}
+\def\seoplist{\textsf{sEOpList}}
+\def\cnt{\textsf{cnt}}
+\def\sval{\textsf{sval}}
+\def\op{\textsf{op}}
+\def\xlbl{\textsf{xlbl}}
+\def\idlist{\textsf{IdList}}
+\def\midx{\textsf{MIdx}}
+
+\def\env{\textsf{env}}
+
+\def\SSE{\textsf{SSE}}
+\def\SP{\textsf{SP}}
+\def\EP{\textsf{EP}}
+\def\WRP{\textsf{WRP}}
+\def\RP{\textsf{RP}}
+\def\IP{\textsf{IP}}
+\def\XP{\textsf{XP}}
+\def\s{\textsf{s}}
+\def\t{\textsf{t}}
+
+%------------------------------------------------------
+%----------------------------------------------------------------
+\def\CAM{\textsf{CAM}{}}
+\def\AM{\textsf{AMEM}{}}
+\def\AMEM{\textsf{AMEM}{}}
+\def\CAMiSE{\textsf{CAMiSE}}
+\def\CAMiSEpp{\textsf{CAMiSE++}}
+\def\rowtag{\textsf{tag}{}}
+\def\rowval{\textsf{val}{}}
+\def\key{\textsf{key}{}}
+\def\val{\textsf{val}{}}
+%------------------------------------------------------
+
+\newcommand{\pp}{\mathsf{pp}}
+\newcommand{\msk}{\mathsf{msk}}
+%\newcommand{\setup}{{\sf Setup}}
+
+%\newcommand{\search}{{\sf Search}}
+% \newcommand{\sk}{{\sf sk}}
+% \newcommand{\tk}{{\sf tk}}
+% \newcommand{\id}{\mathsf{id}}
+\newcommand{\ct}{\mathsf{ct}}
+\newcommand{\sign}{\textnormal{\textsc{Sign}}}
+\newcommand{\verify}{\textnormal{\textsc{Verify}}}
+
+\newcommand{\Gr}{\mathcal{G}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\W}{\mathbf{W}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\bU}{\mathbf{U}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\V}{\mathbf{V}}
+\newcommand{\uu}{\mathbf{u}}
+%\newcommand{\vv}{\mathbf{v}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\zz}{\mathbf{z}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\rr}{\mathbf{r}}
+\newcommand{\dd}{\mathbf{d}}
+\newcommand{\bs}{\mathbf{s}}
+\newcommand{\bt}{\mathbf{t}}
+\newcommand{\zero}{\mathbf{0}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\mW}{\mathrm{W}}
+\newcommand{\mY}{\mathrm{Y}}
+\newcommand{\samp}[1]{\stackrel{\scriptscriptstyle\mathrm{#1}}{\longleftarrow}}
+
+\newcommand{\negl}{{\sf negl}}
+\newcommand{\poly}{{\sf poly}}
+
+\newcommand{\ap}{{\sf AP}}
+\newcommand{\msgp}{{\sf MP}}
+\newcommand{\wap}{{\sf wAP}}
+\newcommand{\fp}{{\sf FP}}
+\newcommand{\cca}{{\sf CCA}}
+\newcommand{\scca}{{\sf sCCA}}
+\newcommand{\mode}{{\sf mode}}
+\newcommand{\lmode}{{\sf left}}
+\newcommand{\rmode}{{\sf right}}
+\newcommand{\expt}{{\sf Expt}}
+\newcommand{\adv}{{\bf Adv}}
+
+\newcommand{\DB}{\textnormal{\textbf{DB}}}
+\newcommand{\timeDB}{\textnormal{\textsf{TimeDB}}}
+\newcommand{\Gam}{\aln{G}}
+\newcommand{\xid}{\aln{xid}}
+\newcommand{\eset}{\emptyset}
+% \newcommand{\xtrap}{\mathrm{xtrap}}
+\newcommand{\xtraps}{\mathrm{xtraps}}
+% \newcommand{\op}{\mathsf{op}}
+
+\newcommand{\IND}{\aln{IND}}
+\newcommand{\EDB}{\textnormal{\textbf{EDB}}}
+\newcommand{\TSet}{\aln{TSet}}
+% \newcommand{\blue}{\color{blue}}
+% \newcommand{\red}{\color{red}}
+\newcommand{\DDH}{\aln{DDH}}
+% \newcommand{\OXT}{\aln{OXT}}
+\newcommand{\CPA}{\aln{CPA}}
+\newcommand{\PRF}{\aln{PRF}}
+\newcommand{\HVE}{\aln{HVE}}
+\newcommand{\SHVE}{\aln{SHVE}}
+\newcommand{\gSHVE}{\aln{gSHVE}}
+\newcommand{\pSHVE}{\aln{pSHVE}}
+\newcommand{\xterm}{\aln{xterm}}
+\newcommand{\sterm}{\aln{sterm}}
+
+\newcommand{\bucket}{\textnormal{\textsf{B}}}
+\newcommand{\bucketset}{\mathcal{W}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\trans}{\mathbf{t}}
+\newcommand{\sbar}{\mathbf{\bar{s}}}
+\newcommand{\xbar}{\mathbf{\bar{x}}}
+\newcommand{\xhat}{\mathbf{\hat{\mathbf{x}}}}
+\newcommand{\Lobs}{\mathcal{L}}
+\newcommand{\labels}{labels} % TODO: change?
+\newcommand{\sxse}{H}
+\newcommand{\rxse}{\textsc{XSet\_elem}}%\textsc{xs_elem}} % TODO: change?
+\newcommand{\algand}{\textbf{and\ }}
+\newcommand{\elist}{[ ]}
+\newcommand{\edict}{\{\}}
+\newcommand{\NULL}{\bot}
+\newcommand{\perms}{\mathrm{WPerms}} % TODO: change?
+\newcommand{\revres}{R} % TODO: change?
+\newcommand{\stagstemp}{\overline{\mathrm{stags}}}
+\newcommand{\Res}{\mathrm{Res}}
+\newcommand{\ResInds}{\mathrm{ResInds}}
+\newcommand{\RPRes}{\mathrm{RP\_Res}}
+\newcommand{\SX}{\mathrm{SX}}
+\newcommand{\btree}{\mathrm{btree}}
+\newcommand{\qstags}{\mathsf{query\_stag}}
+\newcommand{\Perm}{\mathrm{Perm}}
+\newcommand{\WPerms}{\mathrm{WPerms}}
+\newcommand{\Advcor}{\mathrm{AdvCor}}
+\newcommand{\Cor}{\mathrm{\bf Cor}}
+\newcommand{\CorPi}{\mathrm{\mathbf{Cor}}^{\mathrm{\Pi}}_\mathcal{A} (\lambda)}
+%\newcommand{\Real}{\mathrm{\mathbf{Real}}^{\mathrm{\Pi}}_\mathcal{A} (\lambda)}
+\newcommand{\Real}{\textnormal{\textbf{Real}}}
+%\newcommand{\Ideal}{\mathrm{\mathbf{Ideal}}^\Pi_{\mathcal{A},\mathcal{S}} (\lambda)}
+\newcommand{\Ideal}{\textnormal{\textbf{Ideal}}}
+\newcommand{\q}{\mathbf{q}}
+\newcommand{\Sim}{\textnormal{\textsc{Sim}}}
+% not clean in code:
+\newcommand{\Tc}{T_c}
+\newcommand{\makebtreename}{Make\_btree}
+\newcommand{\makexbtreename}{Make\_xbtree}
+\newcommand{\makebtree}{\textsc{\makebtreename}}
+\newcommand{\makexbtree}{\textsc{\makexbtreename}}
+\newcommand{\xt}{\mathbf{x}_t} % TODO: change?
+\newcommand{\w}{\mathbf{x}}
+\newcommand{\cw}{\mathbf{w}}
+\newcommand{\xbtree}{\mathrm{xbtree}}
+
+
+\newcommand{\stags}{\mathrm{stags}}
+\newcommand{\SEnc}{\mathrm{Sym.Enc}}
+\newcommand{\SDec}{\mathrm{Sym.Dec}}
+
+
+\newcommand{\SRP}{\mathrm{SRP}}
+
+\newcommand{\ST}{\mathrm{ST}}
+\newcommand{\XT}{\mathrm{XT}}
+\newcommand{\uniqs}{m}
+% \newcommand{\XSet}{\aln{XSet}}
+\newcommand{\FileCnt}{\aln{DBCnt}}
+\newcommand{\UpdateCnt}{\aln{UpdateCnt}}
+% \newcommand{\BF}{\textbf{BF}}
+\newcommand{\GBF}{\textbf{GBF}}
+% \newcommand{\RBF}{\textbf{RBF}}
+% \newcommand{\op}{\aln{op}}
+
+\newcommand{\setadd}[2]{#1 \gets #1 \cup \{#2\}}
+
+\newcommand{\ssone}{\aln{EXT}}
+\newcommand{\sstwo}{\textnormal{\textsc{OHXT}}}
+\newcommand{\dsone}{\aln{BPXT}}
+\newcommand{\dstwo}{\textnormal{\textsc{Second++}}}
+
+
+
+\newcommand{\mult}{\cdot}
+\newcommand{\Amult}{\otimes}
+\newcommand{\Zf}{\mathbb{Z}[x]/\langle f \rangle}
+\newcommand{\Lb}{\mathcal{L}(\textbf{B})}
+\newcommand{\wn}{\omega( \sqrt{\log n})}
+\newcommand{\wnd}{\omega( \sqrt{\log N})}
+\newcommand{\On}{\Omega(\sqrt{n})}
+\newcommand{\norm}[1]{\Vert #1 \Vert}
+\newcommand{\norminf}[1]{\Vert #1 \Vert_{\infty}}
+\newcommand{\normb}[1]{\Vert #1 \Vert_{2,\infty}}
+\newcommand{\inner}[1]{\langle #1  \rangle}
+\newcommand{\ve}[1]{\textbf{#1}}
+\newcommand{\rot}[1]{\text{rot}(#1)}
+\newcommand{\Rot}[1]{\text{Rot}(#1)}
+\newcommand{\ps}[2]{\langle #1 , #2 \rangle}
+\newcommand{\dist}{\text{dist}}
+\newcommand{\mZ}{\mathbb{Z}}
+\newcommand{\mT}{\mathbb{T}}
+\newcommand{\mQ}{\mathbb{Q}}
+\newcommand{\mC}{\mathbb{C}}
+\newcommand{\mR}{\mathbb{R}}
+\newcommand{\mF}{\mathbb{F}}
+\newcommand{\nR}{n_{\textsc{r}}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\softOmega}{\widetilde{\Omega}}
+\newcommand{\softO}{\widetilde{O}}
+
+\newcommand{\ReRand}{\text{ReRand}}
+%\newcommand{\Enc}{\text{Enc}}
+\newcommand{\Ext}{\text{Ext}}
+\newcommand{\MSB}{\text{MSB}}
+\newcommand{\SIS}{\mathrm{SIS}}
+\newcommand{\LWE}{\mathrm{LWE}}
+\newcommand{\LWR}{\mathrm{LWR}}
+\newcommand{\sLWE}{\mathrm{sLWE}}
+\newcommand{\sbinLWE}{\mathrm{sbinLWE}}
+\newcommand{\binLWE}{\mathrm{binLWE}}
+\newcommand{\sLWR}{\mathrm{sLWR}}
+\newcommand{\Adv}{\mathcal{A}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\NTRU}{\textsc{ntru}}
+\newcommand{\GDDH}{\textsc{gddh}}
+
+\newcommand{\Exp}{\text{Exp}}
+\newcommand{\Expb}{\overline{\text{Exp}}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\Supp}{\mathrm{Supp}} 
+
+\newcommand{\mkw}{\mathsf{mkw}}
+\newcommand{\TDB}{\textnormal{\textbf{MDB}}}
+\newcommand{\MDB}{\widehat{\DB}}
+\newcommand{\MEDB}{\widehat{\EDB}}

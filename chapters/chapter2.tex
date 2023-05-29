@@ -1,0 +1,115 @@
+\epigraph{There's a tiresome young man in Bay Shore. When his fianc\'e cried, `I adore The beautiful sea', He replied, `I agree, it's pretty, but what is it for?'}%
+{\textsc{Morris Bishop}}
+\null\vfill
+\newpage
+%\blankpage
+\blankpagewithnumber
+%===============================================================================
+\section{Preliminaries}
+
+
+\begin{figure}[!tb]    
+    \centering
+    \drawframe{no} 
+    \resizebox{8cm}{!}{
+    \begin{msc}[msc keyword=]{}
+    % \setlength{\instwidth}{2\mscunit}
+    \setlength{\instdist}{5\mscunit}
+    \declinst{party_a}{}{Party A}
+    \declinst{party_b}{}{Party B}
+    \action*{%
+    \begin{minipage}{5cm}
+        \centering 
+        Choose an input $x$\\
+        Sample a random element $r$ from $\mathbb{Z}_p^{*}$
+    \end{minipage}%
+    }{party_a}
+    \action*{%
+        \begin{minipage}{5cm}
+        \centering 
+        Choose an input $K$\\
+    \end{minipage}%
+    }{party_b}
+    \nextlevel[4.5]
+    \action*{%
+        \begin{minipage}{5cm}
+        \centering 
+        Compute $s = (H_{\mathbb{G}}(x))^r$
+    \end{minipage}%
+    }{party_a}
+    \nextlevel[3]
+    \mess[text width=3cm,align=center]{Send $s$}{party_a}{party_b}
+    \nextlevel[1]
+    \action*{%
+    \begin{minipage}{5cm}
+        \centering
+        Compute $t = s^K$
+    \end{minipage}}{party_b}
+    \nextlevel[3]
+    \mess[text width=3.75cm,align=center]{Send $t$}{party_b}{party_a}
+    \nextlevel[1]
+    \action*{%
+    \begin{minipage}{5cm}
+        \centering
+        Compute final output $y = t^{r^{-1}}$
+    \end{minipage}}{party_a}
+    \nextlevel[2]
+    \end{msc}
+    }
+    \caption[Hehe]{Hehe hihi hoho haha}
+    \label{fig:chapter2:hehe}
+\end{figure}
+%---------------------------------------------------------------------------------------
+\begin{algorithm}[!htb]
+  \caption{Experiment $\Real^{\SSE}(\lambda,Q)$ for static SSE}
+  \label{chap:preliminaries_and_background:algo_sec_static_real}
+  \small
+  \begin{algorithmic}[1]
+    \Statex
+    \Function{$\Real^{\SSE}$}{$\lambda,Q$}
+        \State{$N\leftarrow\Adv(\lambda)$}
+        \State{$\left(\sk,{\st}_0,\EDB_0\right)\leftarrow\setup(\lambda,N)$}
+        \For{$k \gets 1\ \textrm{to}\ Q$}
+            \State{$q_k\leftarrow\Adv(\lambda,\EDB_{k-1},\tau_1,\ldots,\tau_{k-1})$}
+            \State{$({\st}_k,\EDB_k,\DB(q_k))\leftarrow \search(\sk,{\st}_{k-1},q_k;\EDB_{k-1})$}
+            \State{$\tau_k$ denote the view of the adversary after the $k^{\textnormal{th}}$ query}
+        \EndFor
+        \State{$b\leftarrow\Adv(\lambda,\EDB_Q,\tau_1,\ldots,\tau_{Q})$}
+        \State\Return{$b$}
+    \EndFunction    
+  \end{algorithmic}
+\end{algorithm}
+
+%-----------------------------
+
+\begin{algorithm}[!htb]
+  \caption{Experiment $\Ideal^{\SSE}(\lambda,Q,\mathcal{L})$ for static SSE}
+  \label{chap:preliminaries_and_background:algo_sec_static_ideal}
+  \small
+  \begin{algorithmic}[1]
+    \Statex
+    \Function{$\Ideal^{\SSE}$}{$\lambda,Q,\mathcal{L}$}
+        \State{Parse the leakage function $\mathcal{L}$ as: $\mathcal{L} = \left(\mathcal{L}^{\setup},\mathcal{L}^{\search}\right)$.}
+        \State{$N\leftarrow\Adv(\lambda)$}
+        \State{$\left({\st}_{\Sim},\EDB_0\right)\leftarrow{{\sim}_{\setup}}(\mathcal{L}^{\setup}(\lambda,N))$}
+        \For{$k \gets 1\ \textrm{to}\ Q$}
+            \State{$q_k\leftarrow\Adv(\lambda,\EDB_{k-1},\tau_1,\ldots,\tau_{k-1})$}
+            \State{$({\st}_{\Sim},\EDB_k,\tau_k)\leftarrow {{\sim}_{\search}}({\st}_{\Sim},\mathcal{L}^{\search}(q_k);\EDB_{k-1})$}
+            \State{$\tau_k$ denote the view of the adversary after the $k^{\textnormal{th}}$ query}
+        \EndFor
+        \State{$b\leftarrow\Adv(\lambda,\EDB_Q,\tau_1,\ldots,\tau_{Q})$}
+        \State\Return{$b$}
+    \EndFunction    
+  \end{algorithmic}
+\end{algorithm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Uncomment if you need individual bibliography after this chapter
+% \putbib
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Blank page on the left, for right side opening of chapter after print, omit/comment if not required
+\newpage
+\blankpagewithnumber

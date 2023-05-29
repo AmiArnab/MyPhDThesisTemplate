@@ -1,0 +1,409 @@
+% \documentclass[12pt,a4paper,twoside,openright,notitlepage]{extreport}
+\documentclass[12pt,a4paper,openright,notitlepage]{extreport}
+% notitlepage option is necessary to prevent abstract from restarting page numbering
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{packages.tex}
+\input{configuration.tex}
+\input{macros.tex}
+\input{acronyms.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\defaultbibliographystyle{plainnat}
+\defaultbibliography{References}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Start Document
+\begin{document}
+\pagenumbering{Roman}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographyunit[\chapter]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+\null
+\begin{center}
+\LARGE\textbf{\thesistitle}
+\end{center}
+
+\vfill
+\vfill
+
+\begin{flushright}
+\Large \myname
+\end{flushright}
+\end{titlepage}
+
+\thispagestyle{empty}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mbox{}
+\vspace{\fill}
+\begin{center}
+    This page is intentionally left blank.
+\end{center}
+\thispagestyle{empty}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Front Page
+\begin{center}
+    \LARGE\textbf{\thesistitle}
+\end{center}
+\vspace{20px}
+\begin{center}
+	Thesis Submitted for the Partial Fulfilment of the Award of the Degree of\\
+	{\large\textbf{Doctor of Philosophy}}\\
+        in\\
+	Computer Science and Engineering\\
+	by\\
+    \vspace{20px}
+	{\large\textbf{\myname}}\\
+    \vspace{20px}
+	Under the Supervision of\\
+    \vspace{5px}
+	{\large\textbf{Prof. \supervisorname}}
+\end{center}
+
+\vspace{\fill}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.2]{icons/iitkgp.png}
+\end{figure}
+
+\begin{center}
+{
+	Department of Computer Science and Engineering, \\
+	Indian Institute of Technology, Kharagpur,\\
+	West Bengal, 721302, India.\\
+	February 2023
+}
+\end{center}
+\vspace{10pt}
+\begin{center}
+    \textcopyright \myname. All Rights Reserved.
+\end{center}
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mbox{}
+\vspace{\fill}
+\begin{center}
+    This page is intentionally left blank.
+\end{center}
+\thispagestyle{empty}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{chapter}{Dedication}
+\begin{center}
+    {\Large To}\\
+    \vspace{5pt}
+    {\Large Don't dedicate, no one loves you.}
+\end{center}
+
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mbox{}
+\vspace{\fill}
+\begin{center}
+    This page is intentionally left blank.
+\end{center}
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{chapter}{Certificate}
+\vspace*{-50pt}
+\noindent
+\begin{minipage}{0.2\linewidth}
+\includegraphics[scale=0.2]{icons/iitkgp.png}
+\end{minipage}%
+\begin{minipage}{0.\linewidth}
+\begin{flushleft}
+    \begin{tabular}{l}
+    Department of Computer Science and Engineering\\
+    Indian Institute of Technology, Kharagpur\\
+    West Bengal, India 721302
+    \end{tabular}
+\end{flushleft}
+\end{minipage}\\
+
+\noindent\rule{\textwidth}{0.4pt}
+\vspace*{20pt}
+\begin{center}
+    \LARGE Certificate
+\end{center}
+
+
+This is to certify that the thesis entitled ``\textbf{Whatever the Nobel-winning Work that\\ You have done}'', submitted by \textbf{\myname} to the Indian Institute of Technology, Kharagpur, for the partial fulfilment of the award of the degree of \emph{Doctor of Philosophy} in Computer Science and Engineering, is a record of bona-fide research work carried out by him under my supervision and guidance.
+
+The thesis in my opinion, is worthy of consideration for the award of the degree of Doctor of Philosophy in accordance with the regulations of the institute. To the best of my knowledge, the results embodied in this thesis have not been submitted to any other university or institute for the award of any other degree or diploma.
+\vspace{50pt}
+
+\begin{flushright}
+    \begin{tabular}{l}
+    Prof. \supervisorname\\
+    Department of Computer Science and Engineering\\
+    Indian Institute of Technology, Kharagpur\\
+    West Bengal, India 721302
+    \end{tabular}
+\end{flushright}
+
+\vspace*{\fill}
+\begin{flushleft}
+    \begin{tabular}{l}
+         Indian Institute of Technology, Kharagpur\\
+         February 2023
+    \end{tabular}
+\end{flushleft}
+
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mbox{}
+\vspace{\fill}
+\begin{center}
+    This page is intentionally left blank.
+\end{center}
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{chapter}{Declaration}
+\begin{center}
+    \LARGE Declaration
+\end{center}
+
+I certify that,
+
+\begin{enumerate}
+    \item the work contained in the thesis is original and has been done by me under the guidance of my supervisor,
+    \item the work has not been submitted to any other institute for any other degree or diploma,
+    \item I have followed the guidelines provided by the Institute in preparing the thesis,
+    \item I have conformed to ethical norms and guidelines while writing the thesis,
+    \item whenever I have used materials (data, models, figures and text) from other sources, I have given due credit to them by citing them in the text of the thesis, and giving their details in the references, and taken permission from the copyright owners of the sources, whenever necessary.
+\end{enumerate}
+
+\vspace{50pt}
+
+\myname
+
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mbox{}
+\vspace{\fill}
+\begin{center}
+    This page is intentionally left blank.
+\end{center}
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{chapter}{Acknowledgement}
+\begin{center}
+    \LARGE Acknowledgement
+\end{center}
+
+\input{chapters/acknowledgement_core.tex}
+
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mbox{}
+\vspace{\fill}
+\begin{center}
+    This page is intentionally left blank.
+\end{center}
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{chapter}{Abstract}
+\begin{abstract}
+\input{chapters/abstract_core.tex}
+\end{abstract}
+
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Table of Contents
+\addcontentsline{toc}{chapter}{Table of Contents}
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+%-------------
+% Comment if required
+\blankpage
+%-------------
+
+% List of figures
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\thispagestyle{empty}
+\newpage
+
+%-------------
+% Comment if required
+\blankpage
+%-------------
+
+% List of tables
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\thispagestyle{empty}
+\newpage
+
+%-------------
+% Comment if required
+\blankpage
+%-------------
+
+% List of tables
+\addcontentsline{toc}{chapter}{List of Acronyms}
+\printacronyms
+\thispagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{arabic}
+\setcounter{page}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Need to do this after abstrct
+\pagestyle{fancy}
+
+\chapter{Introduction}
+\markboth{Introduction}{}
+\label{chap:chapter_1}
+\input{chapters/chapter1.tex}
+
+\chapter{Preliminaries and Background}
+\markboth{Preliminaries and Background}{}
+\label{chap:chapter_2}
+\input{chapters/chapter2.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Comment these lines if you dont have multiple parts
+\part{Part I Title}
+\thispagestyle{empty}
+\newpage
+\blankpagewithnumber
+%----------------------------------------------------------------
+\lhead{\fancyplain{}{}} %Blank header
+\input{chapters/part_1_preface.tex}
+\newpage
+\blankpagewithnumber
+%----------------------------------------------------------------
+% \lhead{\fancyplain{}{Chapter}} %Restore header
+\lhead{\fancyplain{}{\chaptername~ \thechapter}}
+
+\chapter{Chapter 3 Title}
+\markboth{Chapter 3 Title}{}
+\label{chap:chapter_3}
+\input{chapters/chapter3.tex}
+
+\chapter{Chapter 4 Title}
+\markboth{Chapter 4 Title}{}
+\label{chap:chapter_4}
+\input{chapters/chapter4.tex}
+
+\chapter{Chapter 5 Title}
+\markboth{Chapter 5 Title}{}
+\label{chap:chapter_5}
+\input{chapters/chapter5.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{Part II Title}
+\thispagestyle{empty}
+\newpage
+\blankpagewithnumber
+%----------------------------------------------------------------
+\lhead{\fancyplain{}{}} %Blank header
+\input{chapters/part_2_preface.tex}
+\newpage
+\blankpagewithnumber
+%----------------------------------------------------------------
+% \lhead{\fancyplain{}{Chapter}} %Restore header
+\lhead{\fancyplain{}{\chaptername~ \thechapter}}
+
+\chapter{Chapter 6 Title}
+\markboth{Chapter 6 Title}{}
+\label{chap:chapter_6}
+\input{chapters/chapter6.tex}
+
+\chapter{Chapter 7 Title}
+\markboth{Chapter 7 Title}{}
+\label{chap:chapter_7}
+\input{chapters/chapter7.tex}
+
+% End part
+%----------------------------------------------------------------
+% Start wihtout part, to start these chapters independently outside part 2
+\bookmarksetup{startatroot}
+\addtocontents{toc}{\bigskip}
+
+\chapter{Conclusion and Future Directions}
+\markboth{Conclusion and Future Directions}{}
+\label{chap:chapter_8}
+\input{chapters/chapter8.tex}
+
+\bookmarksetup{startatroot}
+\addtocontents{toc}{\bigskip}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Start appendix
+\appendix
+\appendixpage
+\noappendicestocpagenum
+\addappheadtotoc
+
+% \markboth{Appendix}{} % Skip defalut chapter name in header
+\lhead{\fancyplain{}{Appendices}}
+\rhead{\fancyplain{}{}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+% To fix appendix section numbering
+\makeatletter
+\renewcommand{\thesection}{\@arabic\c@section}
+\makeatother
+
+%--------------------------------------------------
+\newpage
+\blankpage
+%--------------------------------------------------
+
+\label{chap:chapter_9}
+\input{chapters/appendix_content.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%Reset header, set left corner
+\lhead{\fancyplain{}{Bibliography}}
+\rhead{\fancyplain{}{}}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\blankpagewithnumber
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{plain}
+% Reset header
+\lhead{\fancyplain{}{}}
+\addcontentsline{toc}{chapter}{Publications}
+\section*{\LARGE Publications}
+\input{chapters/publications.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\thispagestyle{empty}
+\input{chapters/end_page.tex}
+
+\end{document}
